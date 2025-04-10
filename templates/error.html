@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error - CO:CO₂ Prediction</title>
+    <style>
+        body {
+            background-color: #0e0e2c;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .error-box {
+            background-color: #1e1e3f;
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        h1 {
+            color: #ff4c4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-box">
+        <h1>Oops! Something went wrong.</h1>
+        <p>{{ error_message }}</p>
+        <br>
+        <a href="/" style="color: #00aced;">Go Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Predicted CO - CO₂ Ratio:</h2> <p>{{ prediction }}</p>
+    <h3>Accuracy:</h3> <p>{{ accuracy }}%</p>
+    <h3>Mean Squared Error (MSE):</h3> <p>{{ mse }}</p>
+
+    <canvas id="chart" width="400" height="200"></canvas>
+    <script>
+      const ctx = document.getElementById('chart').getContext('2d');
+      const futureData = {{ future_values|tojson }};
+      const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1 Hour', '2 Hours', '3 Hours', '4 Hours'],
+          datasets: [{
+            label: 'Future CO:CO₂ Ratio',
+            data: futureData,
+            backgroundColor: 'rgba(255, 206, 86, 0.6)',
+            borderColor: 'rgba(255, 206, 86, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+
+    <br><br>
+    <a href="/">🔁 Predict Again</a>
+  </div>
+</body>
+</html>

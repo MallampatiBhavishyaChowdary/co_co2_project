@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CO - CO₂ Ratio Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h1>CO - CO₂ Ratio Prediction</h1>
+    <form action="/predict" method="post">
+      {% set fields = ['Cb_FLOW', 'CB_PRESS', 'Cb_TEMP', 'STEAM_FLOW', 'STEAM_TEMP', 'STEAM_PRESS',
+        'O2_PRESS', 'O2_FLOW', 'O2_PER', 'PCI', 'ATM_HUMID', 'HB_TEMP', 'HB_PRESS', 'TOP_PRESS',
+        'TOP_TEMP1', 'TOP_SPRAY', 'TOP_TEMP', 'TOP_PRESS1', 'H2', 'SKIN_TEMP_AVG', 'CO', 'CO2'] %}
+      <label for="datetime">DATE TIME</label>
+      <input type="datetime-local" id="datetime" name="datetime" required>
+
+      {% for field in fields %}
+        <label for="{{ field }}">{{ field.replace('_', ' ') }}</label>
+        <input type="number" step="any" name="{{ field }}" required>
+      {% endfor %}
+
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
