@@ -57,7 +57,7 @@ jsonschema==3.2.0
 makefun==1.15.6
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
-# matplotlib==3.10.1
+matplotlib==3.10.1
 mdurl==0.1.2
 more-itertools==8.10.0
 multidict==6.1.0
