@@ -27,11 +27,15 @@ Copy
 Edit
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
+
+
 📦 Install Dependencies
 bash
 Copy
 Edit
 pip install flask matplotlib numpy
+
+
 🧙‍♂️ Run the Magic
 bash
 Copy
@@ -52,6 +56,8 @@ co-co2-ratio-predictor/
 ├── static/              # CSS or images (optional)
 ├── requirements.txt     # Dependencies list
 └── README.md            # You’re reading this!
+
+
 📈 Output Preview
 ✅ CO–CO₂ Ratio: ~1.03
 
@@ -59,15 +65,18 @@ co-co2-ratio-predictor/
 
 ❌ MSE: ~0.0041
 
+
 🔮 Future trend chart included!
 
+
 📋 Requirements
-txt
-Copy
-Edit
+
 flask
+
 matplotlib
+
 numpy
+
 Add them to requirements.txt if you're deploying.
 
 💡 About
@@ -77,5 +86,5 @@ Built by Mallampati Bhavishya 💙
 ### 🧬 Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/co-co2-ratio-predictor.git
+git clone https://github.com/MallampatiBhavishyaChowdary/co-co2-ratio-predictor.git
 cd co-co2-ratio-predictor
